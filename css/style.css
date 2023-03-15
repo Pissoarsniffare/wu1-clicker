@@ -141,11 +141,11 @@ audio {
     width: var(--space-4xl-5xl);
     height: var(--space-4xl-5xl);
     font-size: var(--step-2);
-    background: url('../img/brett-meliti-RgkYMfFopIA-unsplash-removebg-preview.png');
+    background: url('../img/4316026900_6fc03352b6_w.jpg');
     background-size: cover;
     background-position: center;
     border: 2px solid transparent;
-    color: var(--color-light);
+    color: #D4AF37;
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
