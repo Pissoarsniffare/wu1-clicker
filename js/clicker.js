@@ -28,6 +28,7 @@ let moneyPerClick = 1;
 let moneyPerSecond = 0;
 let acquiredUpgrades = 0;
 let last = 0;
+let procent = 0;
 let numberOfClicks = 0; // hur många gånger har spelare eg. klickat
 let active = false; // exempel för att visa att du kan lägga till klass för att indikera att spelare får valuta
 
@@ -72,7 +73,7 @@ clickerButton.addEventListener(
     'click',
     () => {
         // vid click öka score med moneyPerClick
-        money += moneyPerClick;
+        money += moneyPerClick * Math.pow(1.3,procent);
         // håll koll på hur många gånger spelaren klickat
         numberOfClicks += 1;
         // console.log(clicker.score);
@@ -96,7 +97,7 @@ function step(timestamp) {
     upgradesTracker.textContent = acquiredUpgrades;
 
     if (timestamp >= last + 1000) {
-        money += moneyPerSecond;
+        money += moneyPerSecond * Math.pow(1.3,procent);
         last = timestamp;
     }
 
@@ -165,12 +166,12 @@ upgrades = [
     {
         name: 'Bröd',
         cost: 30,
-        amount: 1,
+        clicks: 1,
     },
     {
         name: 'Mandelmassa',
         cost: 100,
-        clicks: 3,
+        procent: 1,
     },
     {
         name: 'Grädde',
@@ -178,7 +179,7 @@ upgrades = [
         amount: 10,
     },
     {
-        name: 'Grävmaskin',
+        name: 'Gyllene grädde',
         cost: 1000,
         amount: 100,
     },
@@ -210,7 +211,11 @@ function createCard(upgrade) {
     const cost = document.createElement('p');
     if (upgrade.amount) {
         header.textContent = `${upgrade.name}, +${upgrade.amount} per sekund.`;
-    } else {
+    }
+    else if (upgrade.procent) {
+        header.textContent = `${upgrade.name}, 1.3x per klick och sekund`;   
+    }
+    else {
         header.textContent = `${upgrade.name}, +${upgrade.clicks} per klick.`;
     }
     cost.textContent = `Köp för ${upgrade.cost} semlor.`;
@@ -223,6 +228,7 @@ function createCard(upgrade) {
             cost.textContent = 'Köp för ' + upgrade.cost + ' semlor';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
+            procent += upgrade.procent ? upgrade.procent : 0;
             message('Grattis du har köpt en uppgradering!', 'success');
         } else {
             message('Du har inte råd.', 'warning');
