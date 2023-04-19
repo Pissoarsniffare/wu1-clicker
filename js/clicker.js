@@ -167,21 +167,25 @@ upgrades = [
         name: 'Bröd',
         cost: 30,
         clicks: 1,
+        clas: 'upgrade-1'
     },
     {
         name: 'Mandelmassa',
-        cost: 100,
-        procent: 1,
+        cost: 500,
+        amount: 10,
+        clas: 'upgrade-2'
     },
     {
         name: 'Grädde',
-        cost: 100,
-        amount: 10,
+        cost: 1000,
+        amount: 50,
+        clas: 'upgrade-3'
     },
     {
         name: 'Gyllene grädde',
-        cost: 1000,
-        amount: 100,
+        cost: 100000,
+        procent: 1,
+        clas: 'upgrade-4'
     },
 ];
 
@@ -205,7 +209,20 @@ upgrades = [
  */
 function createCard(upgrade) {
     const card = document.createElement('div');
-    card.classList.add('card');
+    card.classList.add('card')
+    if (upgrade.clas == 'upgrade-1') {
+        card.classList.add('upgrade-1')
+    }
+    else if (upgrade.clas == 'upgrade-2') {
+        card.classList.add('upgrade-2')
+    }
+    else if (upgrade.clas == 'upgrade-3') {
+        card.classList.add('upgrade-3')
+    }
+    else if (upgrade.clas == 'upgrade-4') {
+        card.classList.add('upgrade-4')
+    }
+    // card.classList.add('card', 'upgrade-1', 'upgrade-2', 'upgrade-3', 'upgrade-4');
     const header = document.createElement('p');
     header.classList.add('title');
     const cost = document.createElement('p');

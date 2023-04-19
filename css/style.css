@@ -206,7 +206,7 @@ audio {
 }
 
 .card:hover {
-    background-color: var(--color-lighter);
+    background-color:beige;
 }
 
 .card p:not(.title) {
@@ -236,3 +236,18 @@ audio {
 .active {
     animation: flash 1s infinite;
 }
+
+.upgrade-1 {
+    background-color: #d37429;
+}   
+
+.upgrade-2 {
+    background-color:#f5dc9a;
+} 
+.upgrade-3 {
+    background-color:#f8f1d0;
+} 
+.upgrade-4 {
+    background-color:#D4AF37;
+}   
+
