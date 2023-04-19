@@ -49,11 +49,11 @@ let achievements = [
     },
     {
         description: 'Bagare, med licens att Baka!',
-        requiredClicks: 10,
+        requiredClicks: 100,
         acquired: false,
     },
     {
-        description: 'Tac-2 god!',
+        description: 'Grattis du har just slösat bort jätte mycket tid i ditt liv ',
         requiredClicks: 10000,
         acquired: false,
     },
