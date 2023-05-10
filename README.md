@@ -1,3 +1,10 @@
+{
+        title: 'Semla Clicker',
+        tagline: 'Baka semlor och bli semmelmästare',
+        url: 'https://pissoarsniffare.github.io/wu1-clicker/',
+        git: 'https://github.com/Pissoarsniffare/wu1-clicker',
+        author: 'Samuel Viglundsson'
+    }
 # Clicker, webbprojekt
 
 Du har fått i uppdrag att designa och skapa ett clicker-spel från Kakmonstret AB.
